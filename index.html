@@ -15,54 +15,19 @@
 			}
 
 			/*parallax*/
-			.parallax{
-				height:500px;
-				background-image:url('background.webp');
-				background-size:cover;
-				background-position:center;
-				background-attachment:fixed;
+
+			.parallax, .parallax2, .parallax3, .parallax4, .parallax5, .parallax6, .parallax7{
+				height: 500;
+				position: relative;
+				overflow: hidden;
 			}
-			.parallax2{
-				height:500px;
-				background-image:url('back2.webp');
-				background-size:cover;
-				background-position:center;
-				background-attachment:fixed;				
-			}
-			.parallax3{
-				height:500px;
-				background-image:url('back3.webp');
-				background-size:cover;
-				background-position:center;
-				background-attachment:fixed;				
-			}
-			.parallax4{
-				height:500px;
-				background-image:url('back4.webp');
-				background-size:cover;
-				background-position:center;
-				background-attachment:fixed;				
-			}
-			.parallax5{
-				height:500px;
-				background-image:url('back5.webp');
-				background-size:cover;
-				background-position:center;
-				background-attachment:fixed;				
-			}
-			.parallax6{
-				height:500px;
-				background-image:url('back6.webp');
-				background-size:cover;
-				background-position:center;
-				background-attachment:fixed;				
-			}
-			.parallax7{
-				height:500px;
-				background-image:url('back7.webp');
-				background-size:cover;
-				background-position:center;
-				background-attachment:fixed;				
+
+			.parallax-img{
+				position:absolute;
+				top:0;
+				left:0;
+				width: 100%;
+				will-change: transform;
 			}
 
 			
@@ -104,7 +69,9 @@
 	
   <body>
 	  <!---------------parallax effect------------------------>
-	  <div class="parallax"></div>
+	  <div class="parallax">
+		  <img class="parallax-img" src="backgrond.webp">
+	  </div>
 	<!----------------------content--------------------------------->
 	  <div class="par-content">
 		  <h1>ALING JACKIE'S KITCHEN</h1>
@@ -112,7 +79,9 @@
 	  </div>
 
 	  <!---------------2 parallax effect------------------------>
-	  <div class="parallax2"></div>
+	  <div class="parallax2">
+		  <img class="parallax-img" src="back2.webp">
+	  </div>
 	<!---------------------- 2 content--------------------------------->
 	  <div class="par-content">
 		  <h1>our location</h1>
@@ -120,7 +89,9 @@
 	  </div>
 
 	  <!---------------3 parallax effect------------------------>
-	  <div class="parallax3"></div>
+	  <div class="parallax3">
+		  <img class="parallax-img" src="back3.webp">
+	  </div>
 	<!---------------------- 3 content--------------------------------->
 	  <div class="par-content">
 		  <h1>how to order?</h1>
@@ -129,7 +100,9 @@
 
 
 	  <!---------------4 parallax effect------------------------>
-	  <div class="parallax4"></div>
+	  <div class="parallax4">
+		  <img class="parallax-img" src="back4.webp">
+	  </div>
 	<!---------------------- 4 content--------------------------------->
 	  <div class="par-content">
 		  <h1>how we deliver?</h1>
@@ -139,7 +112,9 @@ if you (the customer) chooses us to book<br> on their behalf, please expect high
 	  </div>
 
 	  <!---------------5 parallax effect------------------------>
-	  <div class="parallax5"></div>
+	  <div class="parallax5">
+		  <img class="parallax-img" src="back5.webp">
+	  </div>
 	<!---------------------- 5 content--------------------------------->
 	  <div class="par-content">
 		  <h1>for reserved orders</h1>
@@ -149,7 +124,9 @@ if you (the customer) chooses us to book<br> on their behalf, please expect high
 	  </div>
 
 	  <!---------------6 parallax effect------------------------>
-	  <div class="parallax6"></div>
+	  <div class="parallax6">
+		  <img class="parallax-img" src="back6.webp">
+	  </div>
 	<!---------------------- 6 content--------------------------------->
 	  <div class="par-content">
 		  <h1>for cash on delivery(COD)</h1>
@@ -157,7 +134,9 @@ if you (the customer) chooses us to book<br> on their behalf, please expect high
 	  </div>
 	  
 	  <!---------------7 parallax effect------------------------>
-	  <div class="parallax7"></div>
+	  <div class="parallax7">
+		  <img class="parallax-img" src="back7.webp">
+	  </div>
 	<!---------------------- 7 content--------------------------------->
 	  <div class="par-content">
 		  <h1>store ours</h1>
@@ -173,6 +152,20 @@ if you (the customer) chooses us to book<br> on their behalf, please expect high
 	function menu() {
 		window.location.href = "menu.html";
 	}
+
+	function parallaxEffect(){
+		const items=document.querySelectorAll('.parallax-img');
+
+		items.forEach(img=>{
+			const box = img.parentElement;
+			const rect = box.getBoundingClientRect();
+			const offset = rect.top*-0.3;
+			img.style.transform = 'translateY(${offset}px)';
+		})
+	}
+
+	wimdow.addEventListener('scroll',parallaxEffect);
+	window.addEventListener('load',parallaxEffect);
 </script>
 	  
   </body>
