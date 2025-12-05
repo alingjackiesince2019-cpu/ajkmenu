@@ -3,61 +3,112 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title> ALING JACKIE'S KITCHEN </title> 
-    <!--#FFF0DB-background #b46b6b- button #8b3a3a- text-->
+    <title>ALING JACKIE'S KITCHEN</title>
+
     <style>
-      body{
-        background-color:#FFF0DB;
-      }
-/*text*/
-      p, h1, h2, h3{
-        color:#8b3a3a;
-        text-align:center;
+      body {
+        background-color: #FFF0DB;
+        margin: 0;
+        font-family: Arial, sans-serif;
       }
 
-     /*top div*/ 
-      .top{
-        background-color:#F2E2C8;
-        width: 800px;
-        height: 200px;
-        margin: 0 auto;
-      }
-      .top1{
-        background-color:#E4D3B6;
-        width: 400px;     
-        height: 100px;
-        margin: 0 auto;
+      /* text */
+      p, h1, h2, h3 {
+        color: #8b3a3a;
+        text-align: center;
+        margin: 0;
+        padding: 5px;
       }
 
-      /*CATALOC CHOICE*/
-      .catContainer{
-       /* background:#b46b6b;*/
+      /* top section */
+      .top {
+        background-color: #F2E2C8;
+        width: 90%;
+        max-width: 800px;
+        padding: 20px;
+        margin: 20px auto;
+        border-radius: 10px;
+      }
+
+      .top1 {
+        background-color: #E4D3B6;
+        width: 90%;
+        max-width: 400px;
+        padding: 10px;
+        margin: 10px auto 0 auto;
+        border-radius: 10px;
+      }
+
+      /* Catalog container */
+      .catContainer {
         width: 100%;
+        max-width: 900px;
+        margin: 40px auto;
         display: flex;
         flex-direction: column;
-        gap: 20px;
+        gap: 25px;
       }
-      
+
+      /* Catalog cards */
+      .catCard {
+        background: #F2E2C8;
+        width: 70%;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      }
+
+      /* odd → Left */
+      .catCard:nth-child(odd) {
+        margin-right: auto;
+      }
+
+      /* even → Right */
+      .catCard:nth-child(even) {
+        margin-left: auto;
+      }
+
+      /* mobile responsive */
+      @media (max-width: 600px) {
+        .catCard {
+          width: 90%;
+          margin-left: auto !important;
+          margin-right: auto !important;
+        }
+      }
     </style>
 
   </head>
 <body>
 
   <div class="top">
-    <h1>
-      <strong>ALING JACKIE'S MENU</strong>
-    </h1>
+    <h1><strong>ALING JACKIE'S MENU</strong></h1>
     
     <div class="top1">
       <p>niluto ng may puso, ginawa ng may passion at dedication</p>
     </div>
-    
   </div>
 
   <!---------------------------------------CATALOG CHOICE---------------------------------------------------->
   <div class="catContainer">
-    
+
+    <!-- SAMPLE ITEMS — add more here -->
+    <div class="catCard">
+      <h2>Ulam</h2>
+      <p>Click to see full menu</p>
+    </div>
+
+    <div class="catCard">
+      <h2>Meryenda</h2>
+      <p>Click to see full menu</p>
+    </div>
+
+    <div class="catCard">
+      <h2>Special Order</h2>
+      <p>Click to see full menu</p>
+    </div>
+
   </div>
+
 </body>
 </html>
-  
