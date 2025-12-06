@@ -60,6 +60,7 @@
       width: 70%;
     }
 
+    
     @keyframes borderGlow {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
@@ -93,6 +94,81 @@
       margin-bottom: 10px;
     }
 
+    /* container to center sign */
+    .signWrapper {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+    }
+
+    /* ropes */
+    .rope {
+      width: 2px;
+      height: 60px;
+      background: #5a4632;
+      position: absolute;
+      top: 0;
+    }
+    
+    /* sign + animation */
+    .sign {
+      width: 250px;
+      padding: 15px;
+      background: #d9b48f;
+      border: 5px solid #8b5a2b;
+      border-radius: 10px;
+      font-size: 22px;
+      font-weight: bold;
+      color: #5a2c2c;
+      text-align: center;
+
+      position: relative;
+      animation: swing 3s ease-in-out infinite;
+      transform-origin: top center;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+    }
+
+    /* swing animation */
+    @keyframes swing {
+      0%   { transform: rotate(0deg); }
+      25%  { transform: rotate(3deg); }
+      50%  { transform: rotate(0deg); }
+      75%  { transform: rotate(-3deg); }
+      100% { transform: rotate(0deg); }
+    }
+
+
+    /* attach ropes to sign */
+    .rope.left {
+      left: 50%;
+      transform: translateX(-70px);
+    }
+
+    .rope.right {
+      left: 50%;
+      transform: translateX(70px);
+    }
+
+  .  nail {
+      width: 10px;
+      height: 10px;
+      background: #333;
+      border-radius: 50%;
+      position: absolute;
+      top: -5px;
+    }
+  
+    .nail.left {
+      left: calc(50% - 70px - 5px);
+    }
+
+    .nail.right {
+      left: calc(50% + 70px - 5px);
+    }  
+
+    
+
     @media (max-width: 600px) {
       .cardBorder {
         width: 90%;
@@ -103,6 +179,21 @@
 </head>
 
 <body>
+<!----------------SIGN------------------------>
+  <div class="signWrapper">
+    <div class="rope left"></div>
+    <div class="rope right"></div>
+
+    <div class="nail left"></div>
+    <div class="nail right"></div>
+
+    <a href="">
+      <div class="sign">
+        <h3>MESSAGE us at ALING JACKIE'S KITCHEN if you want to order</h3>
+      </div>
+    </a>
+  </div>
+  
 
   <div class="top">
     <h1><strong>ALING JACKIE'S MENU</strong></h1>
