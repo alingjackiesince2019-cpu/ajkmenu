@@ -1,112 +1,152 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>ALING JACKIE'S KITCHEN</title>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>ALING JACKIE'S KITCHEN</title>
 
-    <style>
-      body {
-        background-color: #FFF0DB;
-        margin: 0;
-        font-family: Arial, sans-serif;
-      }
+  <style>
+    body {
+      background-color: #FFF0DB;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
 
-      /* text */
-      p, h1, h2, h3 {
-        color: #8b3a3a;
-        text-align: center;
-        margin: 0;
-        padding: 5px;
-      }
+    /* text */
+    p, h1, h2, h3 {
+      color: #8b3a3a;
+      text-align: center;
+      margin: 0;
+      padding: 5px;
+    }
 
-      /* top section */
-      .top {
-        background-color: #F2E2C8;
+    /* top section */
+    .top {
+      background-color: #F2E2C8;
+      width: 90%;
+      max-width: 800px;
+      padding: 20px;
+      margin: 20px auto;
+      border-radius: 10px;
+    }
+
+    .top1 {
+      background-color: #E4D3B6;
+      width: 90%;
+      max-width: 400px;
+      padding: 10px;
+      margin: 10px auto 0;
+      border-radius: 10px;
+    }
+
+    /* Catalog container */
+    .catContainer {
+      width: 100%;
+      max-width: 900px;
+      margin: 40px auto;
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      align-items: center; /* center all cards */
+    }
+
+    /* Animated border wrapper */
+    .cardBorder {
+      padding: 3px;
+      border-radius: 14px;
+      background: linear-gradient(45deg, #8b3a3a, #e4b07a, #8b3a3a);
+      background-size: 300% 300%;
+      animation: borderGlow 5s ease infinite;
+      width: 70%;
+    }
+
+    @keyframes borderGlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Card */
+    .catCard {
+      background: #F2E2C8;
+      width: 100%;
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      cursor: pointer;
+    }
+
+    .catCard:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.16);
+    }
+
+    /* image inside card */
+    .catImg {
+      width: 100%;
+      max-width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 10px;
+    }
+
+    @media (max-width: 600px) {
+      .cardBorder {
         width: 90%;
-        max-width: 800px;
-        padding: 20px;
-        margin: 20px auto;
-        border-radius: 10px;
       }
+    }
+  </style>
 
-      .top1 {
-        background-color: #E4D3B6;
-        width: 90%;
-        max-width: 400px;
-        padding: 10px;
-        margin: 10px auto 0 auto;
-        border-radius: 10px;
-      }
+</head>
 
-      /* Catalog container */
-      .catContainer {
-        width: 100%;
-        max-width: 900px;
-        margin: 40px auto;
-        display: flex;
-        flex-direction: column;
-        gap: 25px;
-      }
-
-      /* Catalog cards */
-      .catCard {
-        background: #F2E2C8;
-        width: 70%;
-        padding: 20px;
-        border-radius: 12px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      }
-
-      /* odd → Left */
-      .catCard:nth-child(odd) {
-        margin-right: auto;
-      }
-
-      /* even → Right */
-      .catCard:nth-child(even) {
-        margin-left: auto;
-      }
-
-      /* mobile responsive */
-      @media (max-width: 600px) {
-        .catCard {
-          width: 90%;
-          margin-left: auto !important;
-          margin-right: auto !important;
-        }
-      }
-    </style>
-
-  </head>
 <body>
 
   <div class="top">
     <h1><strong>ALING JACKIE'S MENU</strong></h1>
-    
+
     <div class="top1">
       <p>niluto ng may puso, ginawa ng may passion at dedication</p>
     </div>
   </div>
 
-  <!---------------------------------------CATALOG CHOICE---------------------------------------------------->
+  <!---------------------------------------CATALOG---------------------------------------------------->
   <div class="catContainer">
 
-    <!-- SAMPLE ITEMS — add more here -->
-    <div class="catCard">
-      <h2>Ulam</h2>
-      <p>Click to see full menu</p>
-    </div>
+    <!-- ULAM -->
+    <a href="#">
+      <div class="cardBorder">
+        <div class="catCard">
+          <img src="https://via.placeholder.com/180" class="catImg">
+          <h2>Ulam</h2>
+          <p>Click to see full menu</p>
+        </div>
+      </div>
+    </a>
 
-    <div class="catCard">
-      <h2>Meryenda</h2>
-      <p>Click to see full menu</p>
-    </div>
+    <!-- MERYENDA -->
+    <a href="#">
+      <div class="cardBorder">
+        <div class="catCard">
+          <img src="https://via.placeholder.com/180" class="catImg">
+          <h2>Meryenda</h2>
+          <p>Click to see full menu</p>
+        </div>
+      </div>
+    </a>
 
-    <div class="catCard">
-      <h2>Special Order</h2>
-      <p>Click to see full menu</p>
-    </div>
+    <!-- SPECIAL ORDER -->
+    <a href="#">
+      <div class="cardBorder">
+        <div class="catCard">
+          <img src="https://via.placeholder.com/180" class="catImg">
+          <h2>Special Order</h2>
+          <p>Click to see full menu</p>
+        </div>
+      </div>
+    </a>
 
   </div>
 
